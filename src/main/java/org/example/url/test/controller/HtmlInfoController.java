@@ -27,15 +27,4 @@ public class HtmlInfoController {
 
         return "letter";
     }
-
-    @RequestMapping(path = "/")
-    public String get(){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("deletedHtmlInfo", htmlInfoService.getDeletedHtmlInfo());
-        modelAndView.addObject("changedHtmlInfo", htmlInfoService.getChangedHtmlInfoList());
-        modelAndView.addObject("newHtmlInfo", htmlInfoService.getNewHtmlInfo());
-        modelAndView.addObject("secretaryName", "и.о. секретаря");
-        modelAndView.setViewName("letter");
-        return "index";
-    }
 }

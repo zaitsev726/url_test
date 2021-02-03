@@ -54,7 +54,12 @@ public class HtmlInfoService {
 
         return yesterdayHtmlInfos.stream()
                 .filter(yesterdayHtmlInfo -> todayHtmlInfos.stream()
-                        .anyMatch(todayHtmlInfo -> todayHtmlInfo.getUrl().equals(yesterdayHtmlInfo.getUrl()) && !todayHtmlInfo.getHtmlCode().equals(yesterdayHtmlInfo.getUrl())))
+                        .anyMatch(todayHtmlInfo -> todayHtmlInfo
+                                .getUrl()
+                                .equals(yesterdayHtmlInfo.getUrl())
+                                && !todayHtmlInfo
+                                .getHtmlCode()
+                                .equals(yesterdayHtmlInfo.getUrl())))
                 .collect(Collectors.toList());
 
     }
